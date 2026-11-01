@@ -1,0 +1,32 @@
+name: Scheduled Environment Test
+on:
+ # Trigger 1: Every Saturday at 10:00 PM IST (4:30 PM UTC)
+  schedule:
+    - cron: '30 16 * * 6'
+  # Trigger 2: Every Monday at 10:00 AM IST (4:30 AM UTC)  
+    - cron: '30 4 * * 1'
+  workflow_dispatch:
+      
+jobs: 
+  evaluate-schedule:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Environment Test
+        run: 
+          echo "Current System Time (UTC) $(date)"
+          echo "Evaluating scheduled task execution ..."
+          
+          
+  
+  
+      
+
+    
+
+    
+    
+    
+    
+    
+    
+    
