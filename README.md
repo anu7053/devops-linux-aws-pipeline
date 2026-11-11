@@ -2,12 +2,6 @@
 
 An end-to-end DevOps portfolio showcase demonstrating infrastructure provisioning on AWS, automated Linux systems lifecycle administration, configuration management orchestration, and environment
 telemetry tracking.
-[![Linux](https://shields.io)](https://linux.org)
-[![AWS](https://shields.io)](https://amazon.com)
-[![Docker](https://shields.io)](https://docker.com)
-[![Terraform](https://shields.io)](https://terraform.io)
-[![Ansible](https://shields.io)](https://ansible.com)
-[![GitHub Actions](https://shields.io)](https://github.com)
 ### 🏗️ Architecture Blueprint
 
 1. **Infrastructure as Code (Terraform):** Standardizes cloud network environments by declaring target AWS EC2 computing resources and restrictive security groups.
