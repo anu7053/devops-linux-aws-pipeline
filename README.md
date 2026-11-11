@@ -72,8 +72,8 @@ Before deploying this pipeline, ensure you have the following tools and credenti
 
 #### 1. Clone the Repository
 ```bash
-git clone https://github.com<your-username>/<your-repo-name>.git
-cd <your-repo-name>
+git clone https://github.com/anu7053/devops-linux-aws-pipeline.git
+cd devops-linux-aws-pipeline
 ```
 
 #### 2. Provision AWS Infrastructure (Terraform)
