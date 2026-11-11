@@ -8,12 +8,12 @@ telemetry tracking.
 2. **Configuration Orchestration (Ansible):** Executes host checking, verifies target OS structures, manages root user security contexts, and automates dist-upgrades.
 3. **CI/CD Pipeline Automation (GitHub Actions):** Schedules structural cron routines that pull infrastructure code, elevate script executing permissions, and run secure server patching binaries.
 4. **Isolated Telemetry (Docker Stack):** Provisions a decoupled multi-container monitoring solution using Prometheus for metrics storage and Grafana for visual environment health tracking.
-[![Linux](https://shields.io)](https://linux.org)
-[![AWS](https://shields.io)](https://amazon.com)
-[![Docker](https://shields.io)](https://docker.com)
-[![Terraform](https://shields.io)](https://terraform.io)
-[![Ansible](https://shields.io)](https://ansible.com)
-[![GitHub Actions](https://shields.io)](https://github.com)
+[Linux](https://linux.org)
+[AWS](https://amazon.com)
+[Docker](https://docker.com)
+[Terraform](https://terraform.io)
+[Ansible](https://ansible.com)
+[GitHub Actions](https://github.com)
 
 ### 📂 Repository Workspace Blueprint
 text
