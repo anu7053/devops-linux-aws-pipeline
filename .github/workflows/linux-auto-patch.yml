@@ -1,20 +1,55 @@
-name: Scheduled Environment Test
+name: Enterprise Linux Patching & Infra CI/CD
+
 on:
- # Trigger 1: Every Saturday at 10:00 PM IST (4:30 PM UTC)
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
   schedule:
+    # Trigger 1: Every Saturday at 10:00 PM IST (4:30 PM UTC)
     - cron: '30 16 * * 6'
-  # Trigger 2: Every Monday at 10:00 AM IST (4:30 AM UTC)  
+    # Trigger 2: Every Monday at 10:00 AM IST (4:30 AM UTC)
     - cron: '30 4 * * 1'
   workflow_dispatch:
-      
-jobs: 
-  evaluate-schedule:
+
+jobs:
+  validate-infrastructure-and-scripts:
+    name: Validate Terraform, Ansible, Docker & Shell Scripts
     runs-on: ubuntu-latest
+
     steps:
-      - name: Check Environment Test
-        run: 
-          echo "Current System Time (UTC) $(date)"
-          echo "Evaluating scheduled task execution ..."
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Validate Shell Script Syntax (Bash & ShellCheck)
+        run: |
+          chmod +x scripts/server-patch.sh
+          bash -n scripts/server-patch.sh
+          shellcheck scripts/server-patch.sh
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.9.0"
+
+      - name: Terraform Format & Syntax Validation
+        working-directory: ./terraform
+        run: |
+          terraform fmt -check -recursive || true
+          terraform init -backend=false
+          terraform validate
+
+      - name: Validate Ansible Playbook Syntax
+        run: |
+          pip install ansible-core
+          ansible-playbook --syntax-check ansible/playbooks/patch-servers.yml
+
+      - name: Validate Docker Compose Monitoring Stack
+        working-directory: ./docker/monitoring
+        run: |
+          docker compose config -q
+          echo "Docker Compose Prometheus & Grafana config validated successfully."
+
           
           
   
