@@ -54,3 +54,56 @@ Use code with caution.
 
 * **Idempotent Operations:** Implements remote package updating parameters using Ansible playbook definitions to achieve uniform server environments.
 * **Service Orchestration:** Uses Docker Compose to construct multi-container service configurations, maintaining separation between storage nodes (Prometheus) and presentation panels (Grafana).
+
+* ### 🛠️ Prerequisites
+
+Before deploying this pipeline, ensure you have the following tools and credentials configured:
+
+* **AWS Account & IAM Permissions:** An active AWS account with permissions to provision EC2 instances, VPC networking, and Security Groups.
+* **Local CLI Tools:**
+  * [AWS CLI](https://amazon.com) (`v2.x+`) configured via `aws configure`
+  * [Terraform](https://hashicorp.com) (`v1.5+`)
+  * [Ansible](https://ansible.com) (`v2.15+`)
+  * [Docker & Docker Compose](https://docker.com) (`v24.0+`)
+* **SSH Key Pair:** An existing AWS EC2 key pair (`.pem`) for Ansible target node authentication.
+
+---
+
+### 🚀 Quick Start & Deployment
+
+#### 1. Clone the Repository
+```bash
+git clone https://github.com<your-username>/<your-repo-name>.git
+cd <your-repo-name>
+```
+
+#### 2. Provision AWS Infrastructure (Terraform)
+```bash
+cd terraform
+terraform init
+terraform plan
+terraform apply -auto-approve
+```
+*Note the public IP addresses of the provisioned EC2 instances from the Terraform output.*
+
+#### 3. Run Automated Patching (Ansible)
+Update your inventory file with the new EC2 IP addresses, then trigger the patching playbook:
+```bash
+cd ../ansible
+ansible-playbook -i inventory.ini playbooks/patch-servers.yml
+```
+
+#### 4. Launch Monitoring Stack (Prometheus & Grafana)
+Start the containerized telemetry dashboard locally or on your monitoring host:
+```bash
+cd ../docker/monitoring
+docker compose up -d
+```
+* **Prometheus UI:** `http://localhost:9090`
+* **Grafana Dashboard:** `http://localhost:3000` (Default login: `admin` / `admin`)
+
+#### 5. Enable Automated CI/CD Cron Pipeline
+1. Go to your GitHub repository **Settings → Secrets and variables → Actions**.
+2. Add your `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, and `EC2_SSH_KEY` secrets.
+3. The workflow in `.github/workflows/linux-auto-patch.yml` will now run automatically on schedule or via manual **workflow_dispatch**.
+
