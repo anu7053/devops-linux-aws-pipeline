@@ -2,18 +2,18 @@
 
 An end-to-end DevOps portfolio showcase demonstrating infrastructure provisioning on AWS, automated Linux systems lifecycle administration, configuration management orchestration, and environment
 telemetry tracking.
+![AWS](https://img.shields.io/badge/AWS_Cloud-%23FF9900.svg?style=for-the-badge&logo=aws-cloud&logoColor=white)
+![Alpine Linux](https://img.shields.io/badge/Alpine_Linux-%230D597F.svg?style=for-the-badge&logo=alpine-linux&logoColor=white)
+![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
+![Ansible](https://img.shields.io/badge/ansible-%231A1918.svg?style=for-the-badge&logo=ansible&logoColor=white)
+![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 ### 🏗️ Architecture Blueprint
 
 1. **Infrastructure as Code (Terraform):** Standardizes cloud network environments by declaring target AWS EC2 computing resources and restrictive security groups.
 2. **Configuration Orchestration (Ansible):** Executes host checking, verifies target OS structures, manages root user security contexts, and automates dist-upgrades.
 3. **CI/CD Pipeline Automation (GitHub Actions):** Schedules structural cron routines that pull infrastructure code, elevate script executing permissions, and run secure server patching binaries.
 4. **Isolated Telemetry (Docker Stack):** Provisions a decoupled multi-container monitoring solution using Prometheus for metrics storage and Grafana for visual environment health tracking
-![AWS](https://img.shields.io/badge/AWS_Cloud-%230D597F.svg?style=for-the-badge&logo=aws-cloud&logoColor=white)
-![Alpine Linux](https://img.shields.io/badge/Alpine_Linux-%230D597F.svg?style=for-the-badge&logo=alpine-linux&logoColor=white)
-![Docker](https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white)
-![Ansible](https://img.shields.io/badge/ansible-%231A1918.svg?style=for-the-badge&logo=ansible&logoColor=white)
-![Terraform](https://img.shields.io/badge/terraform-%235835CC.svg?style=for-the-badge&logo=terraform&logoColor=white)
-![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 
 ### 📂 Repository Workspace Blueprint
 text
