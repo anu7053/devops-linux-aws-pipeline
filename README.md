@@ -7,7 +7,7 @@ telemetry tracking.
 1. **Infrastructure as Code (Terraform):** Standardizes cloud network environments by declaring target AWS EC2 computing resources and restrictive security groups.
 2. **Configuration Orchestration (Ansible):** Executes host checking, verifies target OS structures, manages root user security contexts, and automates dist-upgrades.
 3. **CI/CD Pipeline Automation (GitHub Actions):** Schedules structural cron routines that pull infrastructure code, elevate script executing permissions, and run secure server patching binaries.
-4. **Isolated Telemetry (Docker Stack):** Provisions a decoupled multi-container monitoring solution using Prometheus for metrics storage and Grafana for visual environment health tracking.
+4. **Isolated Telemetry (Docker Stack):** Provisions a decoupled multi-container monitoring solution using Prometheus for metrics storage and Grafana for visual environment health tracking
 [Linux](https://linux.org)
 [AWS](https://amazon.com)
 [Docker](https://docker.com)
