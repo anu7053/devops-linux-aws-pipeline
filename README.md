@@ -54,18 +54,17 @@ Use code with caution.
 
 * **Idempotent Operations:** Implements remote package updating parameters using Ansible playbook definitions to achieve uniform server environments.
 * **Service Orchestration:** Uses Docker Compose to construct multi-container service configurations, maintaining separation between storage nodes (Prometheus) and presentation panels (Grafana).
-
-* ### 🛠️ Prerequisites
+### 🛠️ Prerequisites
 
 Before deploying this pipeline, ensure you have the following tools and credentials configured:
 
-* **AWS Account & IAM Permissions:** An active AWS account with permissions to provision EC2 instances, VPC networking, and Security Groups.
-* **Local CLI Tools:**
+**AWS Account & IAM Permissions:** An active AWS account with permissions to provision EC2 instances, VPC networking, and Security Groups.
+**Local CLI Tools:**
   * [AWS CLI](https://amazon.com) (`v2.x+`) configured via `aws configure`
   * [Terraform](https://hashicorp.com) (`v1.5+`)
   * [Ansible](https://ansible.com) (`v2.15+`)
   * [Docker & Docker Compose](https://docker.com) (`v24.0+`)
-* **SSH Key Pair:** An existing AWS EC2 key pair (`.pem`) for Ansible target node authentication.
+ **SSH Key Pair:** An existing AWS EC2 key pair (`.pem`) for Ansible target node authentication.
 
 ---
 
@@ -99,8 +98,8 @@ Start the containerized telemetry dashboard locally or on your monitoring host:
 cd ../docker/monitoring
 docker compose up -d
 ```
-* **Prometheus UI:** `http://localhost:9090`
-* **Grafana Dashboard:** `http://localhost:3000` (Default login: `admin` / `admin`)
+ **Prometheus UI:** `http://localhost:9090`
+ **Grafana Dashboard:** `http://localhost:3000` (Default login: `admin` / `admin`)
 
 #### 5. Enable Automated CI/CD Cron Pipeline
 1. Go to your GitHub repository **Settings → Secrets and variables → Actions**.
