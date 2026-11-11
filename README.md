@@ -11,6 +11,7 @@ telemetry tracking.
 ![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)
 ![Grafana](https://img.shields.io/badge/grafana-%23F46800.svg?style=for-the-badge&logo=grafana&logoColor=white)
 ![Prometheus](https://img.shields.io/badge/Prometheus-%23E6522C.svg?style=for-the-badge&logo=Prometheus&logoColor=white)
+[![Enterprise Linux Patching & Infra CI/CD](https://github.com/anu7053/devops-linux-aws-pipeline/actions/workflows/linux-auto-patch.yml/badge.svg)](https://github.com/anu7053/devops-linux-aws-pipeline/actions/workflows/linux-auto-patch.yml)
 ### 🏗️ Architecture Blueprint
 
 1. **Infrastructure as Code (Terraform):** Standardizes cloud network environments by declaring target AWS EC2 computing resources and restrictive security groups.
